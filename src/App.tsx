@@ -552,7 +552,7 @@ export default function App() {
           {lang === 'pt' ? 'Olá, eu sou ' : 'Hi, I am '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 block md:inline mt-1 md:mt-0">{personalData.name}</span>
         </h1>
-        <p className="text-lg md:text-xl text-slate-400 max-w-2xl font-mono min-h-[60px] md:min-h-[60px]">
+        <p className="text-sm md:text-xl text-slate-400 max-w-2xl font-mono min-h-[60px] md:min-h-[60px]">
           {`> `} <TypeWriter key={lang} text={t.role} />
           <span className="animate-pulse">_</span>
         </p>
@@ -935,7 +935,7 @@ export default function App() {
               <div className="mb-4">
                 <img
                   src={personalData.profileImage}
-                  alt="Profile"
+                  alt="Profile - Luis Fernando Refatti Boff"
                   className="w-24 h-24 rounded-xl object-cover shadow-lg shadow-blue-500/20 border-2 border-slate-800 mx-auto md:mx-0"
                   onError={(e) => {
                     e.target.style.display = 'none';
