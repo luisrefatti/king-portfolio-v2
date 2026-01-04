@@ -50,9 +50,9 @@ const translations = {
     },
     sections: {
       presentation: "Apresentação",
-      experience: "Experiência & Background",
+      experience: "Background",
       blog: "Blog",
-      contact: "Conecte-se comigo",
+      contact: "Connect",
       professional: "Trajetória Profissional",
       education: "Formação",
       skills: "Hard Skills",
@@ -95,9 +95,9 @@ const translations = {
     },
     sections: {
       presentation: "Presentation",
-      experience: "Experience & Background",
+      experience: "Background",
       blog: "Blog",
-      contact: "Connect with me",
+      contact: "Connect",
       professional: "Professional Path",
       education: "Education",
       skills: "Hard Skills",
@@ -1008,7 +1008,7 @@ export default function App() {
               </button>
               <div className="flex gap-4 text-xs">
                 <span>UTF-8</span>
-                <span>TypeScript React</span>
+                <span>cmd</span>
                 <span className="flex items-center gap-1"><div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" /> Online</span>
               </div>
             </div>
