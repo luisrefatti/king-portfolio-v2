@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: [https://www.lfrb.com.br/sitemap.xml](https://www.lfrb.com.br/sitemap.xml)
+Sitemap: https://lfrb.com.br/sitemap.xml
