@@ -24,6 +24,11 @@ import {
   Instagram,
   MessageCircle,
   Palette,
+  Wand2,
+  CheckCircle2,
+  Video,
+  LayoutTemplate,
+  ShieldAlert,
   Link as LinkIcon
 } from 'lucide-react';
 
@@ -46,7 +51,8 @@ const translations = {
       presentation: "Apresentação",
       experience: "Experiência",
       blog: "Blog",
-      contact: "Contato"
+      contact: "Contato",
+      kingmagic: "KingMagic"
     },
     sections: {
       presentation: "Apresentação",
@@ -61,7 +67,8 @@ const translations = {
       volunteering: "Voluntariado",
       honors: "Honors & Awards",
       interests: "Interesses",
-      curiosities: "Curiosidades"
+      curiosities: "Curiosidades",
+      kingmagic: "Serviços KingMagic"
     },
     contact: {
       text: "Vamos conversar sobre dados, estratégia ou tecnologia? Escolha seu canal preferido abaixo:",
@@ -81,6 +88,17 @@ const translations = {
       moreComing: "// Mais conteúdo em breve...",
       interests: "Interesses: IA, Tech, Finanças",
       back: "cd .."
+    },
+    kingmagic: {
+      manifestoTitle: "O Mago",
+      manifesto: "Comecei essa jornada com uma insatisfação profunda lá em 2020: o mercado digital estava preguiçoso. Todo mundo utilizando os mesmos templates enlatados, entregando marcas sem alma e códigos que não escalam.\n\nA KingMagic DIGITAL nasceu como a antítese desse movimento: tudo é construído do zero, sob medida e com intenção.\n\nÉ sobre separar o útil do ruído. É KING e ponto.",
+      arsenalTitle: "Nosso Domínio",
+      social: "Design de Redes Sociais",
+      branding: "Identidade Visual",
+      web: "Engenharia Web",
+      video: "Audiovisual",
+      rules: "Protocolos",
+      btn: "Iniciar projeto"
     }
   },
   en: {
@@ -91,7 +109,8 @@ const translations = {
       presentation: "Presentation",
       experience: "Experience",
       blog: "Blog",
-      contact: "Contact"
+      contact: "Contact",
+      kingmagic: "KingMagic"
     },
     sections: {
       presentation: "Presentation",
@@ -106,7 +125,8 @@ const translations = {
       volunteering: "Volunteering",
       honors: "Honors & Awards",
       interests: "Interests",
-      curiosities: "Curiosities"
+      curiosities: "Curiosities",
+      kingmagic: "KingMagic Services"
     },
     contact: {
       text: "Let's talk about data, strategy, or technology? Choose your preferred channel below:",
@@ -126,6 +146,17 @@ const translations = {
       moreComing: "// More content coming soon...",
       interests: "Interests: AI, Tech, Finance",
       back: "cd .."
+    },
+    kingmagic: {
+      manifestoTitle: "The Magician",
+      manifesto: "I started this journey with a deep dissatisfaction back there in 2020: the digital market was lazy. Everyone was using the same canned templates, delivering soulless brands and AI code that doesn't scale.\n\nKingMagic DIGITAL was born as the antithesis of this movement: everything is built from scratch, custom-made, and with intention.\n\nIt's about separating the signal from the noise. It's KING and period.",
+      arsenalTitle: "Our Domain",
+      social: "Social Media Design",
+      branding: "Visual Identity",
+      web: "Web Engineering",
+      video: "Audiovisual",
+      rules: "Protocols",
+      btn: "Contact"
     }
   }
 };
@@ -522,9 +553,18 @@ export default function App() {
     generateFavicon();
   }, [activeTab]);
 
-  // Estilos globais para a scrollbar
-  const ScrollbarStyles = () => (
+  // Estilos globais para a scrollbar e novas fontes
+  const GlobalStyles = () => (
     <style>{`
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+      
+      .font-playfair {
+        font-family: 'Playfair Display', serif;
+      }
+      .font-space {
+        font-family: 'Space Grotesk', sans-serif;
+      }
+
       ::-webkit-scrollbar {
         width: 8px;
         height: 8px;
@@ -887,19 +927,338 @@ export default function App() {
     );
   };
 
+  const KingMagic = () => {
+    const t = translations[lang];
+
+    return (
+      <div className="animate-fadeIn space-y-16 max-w-4xl mx-auto pb-12">
+        <h2 className="text-2xl font-bold text-slate-100 flex items-center gap-2 mb-8">
+          <ChevronRight className="text-purple-500" /> {t.sections.kingmagic}
+        </h2>
+
+        {/* ==========================================
+          0. INTRODUÇÃO / MANIFESTO 
+      ========================================== */}
+        <div className="bg-gradient-to-br from-indigo-500/10 to-fuchsia-500/10 border border-indigo-500/20 p-8 md:p-12 rounded-xl relative overflow-hidden group shadow-lg">
+          <div className="absolute -right-10 -bottom-10 text-indigo-500/5 transition-transform duration-700 group-hover:scale-110">
+            <Wand2 size={250} />
+          </div>
+
+          <div className="relative z-10 flex items-baseline gap-2 mb-4">
+            <span className="text-4xl md:text-5xl font-black tracking-tighter text-slate-100 font-space">KING</span>
+            <span className="text-5xl md:text-6xl font-playfair italic bg-clip-text text-transparent bg-gradient-to-br from-indigo-400 to-fuchsia-400 -ml-2">Magic.</span>
+          </div>
+
+          <p className="text-sm font-mono text-slate-400 mb-8 uppercase tracking-widest relative z-10 border-l-2 border-indigo-500 pl-4">Ouse ser Diferente.</p>
+
+          <div className="prose prose-invert prose-sm md:prose-base text-slate-300 relative z-10 whitespace-pre-line font-space leading-relaxed max-w-2xl">
+            {t.kingmagic.manifesto}
+          </div>
+
+          <div className="mt-10 flex gap-4 relative z-10">
+            <a href={personalData.contacts.whatsapp} target="_blank" rel="noreferrer" className="bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-8 py-3 rounded font-mono text-sm hover:bg-indigo-500 hover:text-white transition-all flex items-center gap-2 shadow-[0_0_15px_rgba(99,102,241,0.2)]">
+              <Terminal size={16} /> {t.kingmagic.btn}
+            </a>
+          </div>
+        </div>
+
+
+        {/* ==========================================
+          1. OS SERVIÇOS (O QUE FAZEMOS)
+      ========================================== */}
+        <div className="space-y-8">
+          <h3 className="text-2xl text-slate-100 font-playfair italic flex items-center gap-3 border-b border-slate-800 pb-4">
+            <span className="text-yellow-400 font-space not-italic font-black">01.</span> {t.kingmagic.arsenalTitle}
+          </h3>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-slate-900/40 border border-slate-800 p-8 rounded-lg hover:border-yellow-400/50 transition-colors">
+              <Palette className="text-yellow-400 mb-6" size={28} />
+              <h4 className="font-bold text-slate-100 mb-3 font-space text-lg">Identidade Visual</h4>
+              <p className="text-sm text-slate-400 leading-relaxed font-space">Construímos marcas que dominam o mercado. Posicionamento premium, tipografia autoral e design estratégico que separa a sua empresa do ruído visual.</p>
+            </div>
+
+            <div className="bg-slate-900/40 border border-slate-800 p-8 rounded-lg hover:border-blue-400/50 transition-colors">
+              <Code className="text-blue-400 mb-6" size={28} />
+              <h4 className="font-bold text-slate-100 mb-3 font-space text-lg">Engenharia Web</h4>
+              <p className="text-sm text-slate-400 leading-relaxed font-space">Não usamos construtores genéricos. Criamos landing pages de alta conversão, sites e sistemas complexos com código limpo e arquitetura robusta.</p>
+            </div>
+
+            <div className="bg-slate-900/40 border border-slate-800 p-8 rounded-lg hover:border-pink-400/50 transition-colors">
+              <Video className="text-pink-400 mb-6" size={28} />
+              <h4 className="font-bold text-slate-100 mb-3 font-space text-lg">Audiovisual</h4>
+              <p className="text-sm text-slate-400 leading-relaxed font-space">Foco em retenção extrema. Decupagem dinâmica, sound design e edição voltada para prender a atenção em vídeos curtos ou narrativas longas.</p>
+            </div>
+          </div>
+        </div>
+
+
+        {/* ==========================================
+          2. VALORES E ENTREGÁVEIS (O QUE VOCÊ LEVA)
+      ========================================== */}
+        <div className="space-y-12">
+          <h3 className="text-2xl text-slate-100 font-playfair italic flex items-center gap-3 border-b border-slate-800 pb-4">
+            <span className="text-indigo-400 font-space not-italic font-black">02.</span> Investimento e Entregáveis
+          </h3>
+
+          {/* 2.1 Identidade Visual */}
+          <div className="bg-slate-900/30 border border-slate-800 rounded-xl p-8 md:p-10 hover:border-indigo-500/30 transition-colors">
+            <h4 className="text-slate-100 font-bold mb-8 flex items-center gap-3 font-space text-2xl">
+              <LayoutTemplate className="text-indigo-400" size={28} /> {t.kingmagic.branding}
+            </h4>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Pacote 1 */}
+              <div className="bg-slate-900/50 border border-slate-800 p-6 rounded-lg flex flex-col">
+                <div className="text-indigo-400 font-mono text-xs mb-2">PACOTE 01</div>
+                <h5 className="font-bold text-slate-100 text-xl mb-1">Essencial</h5>
+                <div className="text-2xl font-bold text-slate-100 mb-6 border-b border-slate-800 pb-4">R$ 550</div>
+                <ul className="space-y-3 text-sm text-slate-400 flex-grow mb-6">
+                  <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-500 shrink-0 mt-0.5" /> Logo Principal</li>
+                  <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-500 shrink-0 mt-0.5" /> Variações (Claro, Escuro, P&B)</li>
+                  <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-500 shrink-0 mt-0.5" /> Guia Visual de Cores e Fontes</li>
+                  <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-500 shrink-0 mt-0.5" /> Arquivos em PNG via Google Drive</li>
+                </ul>
+                <div className="text-xs font-mono text-slate-500"><Clock size={12} className="inline mr-1" /> 7 a 10 dias úteis</div>
+              </div>
+
+              {/* Pacote 2 (Destaque) */}
+              <div className="bg-slate-900/80 border border-indigo-500/50 p-6 rounded-lg flex flex-col relative shadow-[0_0_20px_rgba(99,102,241,0.1)]">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-indigo-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                  Recomendado
+                </div>
+                <div className="text-indigo-400 font-mono text-xs mb-2 mt-2">PACOTE 02</div>
+                <h5 className="font-bold text-indigo-300 text-xl mb-1">Profissional</h5>
+                <div className="text-2xl font-bold text-slate-100 mb-6 border-b border-slate-800 pb-4">R$ 1.100</div>
+                <ul className="space-y-3 text-sm text-slate-400 flex-grow mb-6">
+                  <li className="flex items-start gap-2 text-indigo-300 font-medium"><CheckCircle2 size={16} className="text-indigo-400 shrink-0 mt-0.5" /> Tudo do Essencial +</li>
+                  <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-500 shrink-0 mt-0.5" /> Kit Redes Sociais (Perfil/Capa)</li>
+                  <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-500 shrink-0 mt-0.5" /> 3 Mockups Realistas (Aplicações)</li>
+                  <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-500 shrink-0 mt-0.5" /> 6 Ícones para Destaques (Instagram)</li>
+                </ul>
+                <div className="text-xs font-mono text-slate-500"><Clock size={12} className="inline mr-1" /> 10 a 15 dias úteis</div>
+              </div>
+
+              {/* Pacote 3 */}
+              <div className="bg-slate-900/50 border border-slate-800 p-6 rounded-lg flex flex-col">
+                <div className="text-indigo-400 font-mono text-xs mb-2">PACOTE 03</div>
+                <h5 className="font-bold text-slate-100 text-xl mb-1">Premium</h5>
+                <div className="text-2xl font-bold text-slate-100 mb-6 border-b border-slate-800 pb-4">R$ 1.400</div>
+                <ul className="space-y-3 text-sm text-slate-400 flex-grow mb-6">
+                  <li className="flex items-start gap-2 text-indigo-300 font-medium"><CheckCircle2 size={16} className="text-indigo-400 shrink-0 mt-0.5" /> Tudo do Profissional +</li>
+                  <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-500 shrink-0 mt-0.5" /> Brand Book Completo (Manual)</li>
+                  <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-500 shrink-0 mt-0.5" /> Naming, Bordão e Estratégia de Bio</li>
+                  <li className="flex items-start gap-2"><CheckCircle2 size={16} className="text-green-500 shrink-0 mt-0.5" /> 3 Templates Editáveis (Canva)</li>
+                </ul>
+                <div className="text-xs font-mono text-slate-500"><Clock size={12} className="inline mr-1" /> 15 a 20 dias úteis</div>
+              </div>
+            </div>
+          </div>
+
+          {/* 2.2 Redes Sociais */}
+          <div className="bg-slate-900/30 border border-slate-800 rounded-xl p-8 md:p-10">
+            <h4 className="text-slate-100 font-bold mb-6 flex items-center gap-3 font-space text-2xl">
+              <Palette className="text-yellow-400" size={28} /> {t.kingmagic.social}
+            </h4>
+
+            {/* Caixa de Clareza - O que está incluso */}
+            <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-5 mb-8">
+              <h5 className="text-yellow-400 font-bold text-sm mb-3">O QUE ESTÁ INCLUSO EM TODAS AS ARTES:</h5>
+              <div className="grid sm:grid-cols-2 gap-3 text-sm text-slate-300">
+                <span className="flex gap-2"><CheckCircle2 size={18} className="text-yellow-500 shrink-0" /> Design 100% autoral (Zero templates)</span>
+                <span className="flex gap-2"><CheckCircle2 size={18} className="text-yellow-500 shrink-0" /> Formatos nativos (Feed ou Stories)</span>
+                <span className="flex gap-2"><CheckCircle2 size={18} className="text-yellow-500 shrink-0" /> Fidelidade total à sua paleta de cores</span>
+                <span className="flex gap-2"><CheckCircle2 size={18} className="text-yellow-500 shrink-0" /> Exportação em PNG/JPG máxima resolução</span>
+              </div>
+            </div>
+
+            <div className="overflow-x-auto">
+              <table className="w-full text-left font-mono text-sm">
+                <thead>
+                  <tr className="border-b border-slate-800 text-slate-500">
+                    <th className="pb-4 font-normal">Volume</th>
+                    <th className="pb-4 font-normal">Valor Total</th>
+                    <th className="pb-4 font-normal hidden sm:table-cell">Valor Unitário</th>
+                    <th className="pb-4 font-normal text-right">Prazo</th>
+                  </tr>
+                </thead>
+                <tbody className="text-slate-300">
+                  <tr className="border-b border-slate-800/50 hover:bg-slate-800/20 transition-colors">
+                    <td className="py-4">1 Arte (Avulsa)</td>
+                    <td className="py-4 text-yellow-400 font-bold text-base">R$ 80,00</td>
+                    <td className="py-4 text-slate-500 hidden sm:table-cell">R$ 80,00</td>
+                    <td className="py-4 text-right">Até 3 dias</td>
+                  </tr>
+                  <tr className="border-b border-slate-800/50 hover:bg-slate-800/20 transition-colors">
+                    <td className="py-4">2 Artes</td>
+                    <td className="py-4 text-yellow-400 font-bold text-base">R$ 150,00</td>
+                    <td className="py-4 text-slate-500 hidden sm:table-cell">R$ 75,00</td>
+                    <td className="py-4 text-right">Até 3 dias</td>
+                  </tr>
+                  <tr className="border-b border-slate-800/50 hover:bg-slate-800/20 transition-colors">
+                    <td className="py-4">3 Artes</td>
+                    <td className="py-4 text-yellow-400 font-bold text-base">R$ 210,00</td>
+                    <td className="py-4 text-slate-500 hidden sm:table-cell">R$ 70,00</td>
+                    <td className="py-4 text-right">Até 3 dias</td>
+                  </tr>
+                  <tr className="border-b border-slate-800/50 hover:bg-slate-800/20 transition-colors">
+                    <td className="py-4">4 Artes</td>
+                    <td className="py-4 text-yellow-400 font-bold text-base">R$ 260,00</td>
+                    <td className="py-4 text-slate-500 hidden sm:table-cell">R$ 65,00</td>
+                    <td className="py-4 text-right">Até 5 dias</td>
+                  </tr>
+                  <tr className="hover:bg-slate-800/20 transition-colors">
+                    <td className="py-4">5 Artes</td>
+                    <td className="py-4 text-yellow-400 font-bold text-base">R$ 300,00</td>
+                    <td className="py-4 text-slate-500 hidden sm:table-cell">R$ 60,00</td>
+                    <td className="py-4 text-right">Até 5 dias</td>
+                  </tr>
+                  <tr className="hover:bg-slate-800/20 transition-colors">
+                    <td className="py-4">Outros pacotes, a combinar.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* 2.3 Audio e Dev (Side by Side) */}
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Video */}
+            <div className="bg-slate-900/30 border border-slate-800 rounded-xl p-8 flex flex-col">
+              <h4 className="text-slate-100 font-bold mb-6 flex items-center gap-3 font-space text-xl">
+                <Video className="text-pink-400" size={24} /> {t.kingmagic.video}
+              </h4>
+
+              <div className="bg-pink-500/10 border border-pink-500/20 rounded-lg p-4 mb-6 text-sm text-slate-300 flex-grow">
+                <p className="mb-2"><strong className="text-pink-400">Vídeos Curtos:</strong> Cortes secos, edição cativante, sound design e legendas dinâmicas.</p>
+                <p><strong className="text-pink-400">Vídeos Longos:</strong> Ritmo imersivo e avaliação técnica por minutagem.</p>
+              </div>
+
+              <ul className="space-y-4 font-mono text-sm text-slate-300">
+                <li className="flex justify-between items-center border-b border-slate-800 pb-3">
+                  <span>Vídeo Curto Avulso (Até 60s)</span> <span className="text-pink-400 font-bold text-base">R$ 100,00</span>
+                </li>
+                <li className="flex justify-between items-center border-b border-slate-800 pb-3">
+                  <span>Pacote 4 Vídeos Curtos</span> <span className="text-pink-400 font-bold text-base">R$ 350,00</span>
+                </li>
+                <li className="flex justify-between items-center pt-2">
+                  <span className="text-slate-400">Narrativas Longas (YouTube)</span>
+                  <div className="text-right">
+                    <span className="text-[10px] text-slate-500 uppercase block mb-1">A partir de</span>
+                    <span className="text-pink-400 font-bold text-base">R$ 400,00</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Dev */}
+            <div className="bg-slate-900/30 border border-slate-800 rounded-xl p-8 flex flex-col">
+              <h4 className="text-slate-100 font-bold mb-6 flex items-center gap-3 font-space text-xl">
+                <Code className="text-blue-400" size={24} /> {t.kingmagic.web}
+              </h4>
+
+              <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4 mb-6 text-sm text-slate-300 flex-grow">
+                <p className="mb-2"><strong className="text-blue-400">Landing Pages:</strong> Páginas focadas 100% em conversão e velocidade.</p>
+                <p><strong className="text-blue-400">Sistemas e Sites:</strong> Arquitetura backend/frontend customizada, integrações e SEO.</p>
+              </div>
+
+              <ul className="space-y-4 font-mono text-sm text-slate-300">
+                <li className="flex justify-between items-center border-b border-slate-800 pb-3">
+                  <div>
+                    <p>Landing Pages</p>
+                    <p className="text-[10px] text-slate-500 mt-1">10 a 15 dias úteis</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-[10px] text-slate-500 uppercase block mb-1">A partir de</span>
+                    <span className="text-blue-400 font-bold text-base">R$ 1.000,00</span>
+                  </div>
+                </li>
+                <li className="flex justify-between items-center border-b border-slate-800 pb-3">
+                  <div>
+                    <p>Sites Institucionais</p>
+                    <p className="text-[10px] text-slate-500 mt-1">20 a 30 dias úteis</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-[10px] text-slate-500 uppercase block mb-1">A partir de</span>
+                    <span className="text-blue-400 font-bold text-base">R$ 2.500,00</span>
+                  </div>
+                </li>
+                <li className="flex justify-between items-center pt-2">
+                  <span className="text-slate-400">Sistemas & Apps (Sob demanda)</span>
+                  <div className="text-right">
+                    <span className="text-[10px] text-slate-500 uppercase block mb-1">Taxa Base / Hora</span>
+                    <span className="text-blue-400 font-bold text-base">A combinar.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        {/* ==========================================
+          3. PROTOCOLOS (COMO FUNCIONAMOS)
+      ========================================== */}
+        <div className="space-y-8">
+          <h3 className="text-2xl text-slate-100 font-playfair italic flex items-center gap-3 border-b border-slate-800 pb-4">
+            <span className="text-green-400 font-space not-italic font-black">03.</span> {t.kingmagic.rules}
+          </h3>
+
+          <div className="bg-slate-900/30 border border-slate-800 rounded-xl p-8 md:p-10">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="flex gap-4 items-start">
+                <CheckCircle2 className="text-green-400 shrink-0 mt-1" size={24} />
+                <div>
+                  <h5 className="font-bold text-slate-200 mb-2 font-space text-lg">I. Cronograma & Trava</h5>
+                  <p className="text-sm text-slate-400 font-space leading-relaxed">Nossos prazos são em dias úteis. O relógio só inicia após a entrada financeira (50%) constar na conta e o briefing/materiais exigidos estarem inteiramente nas nossas mãos.</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4 items-start">
+                <CheckCircle2 className="text-green-400 shrink-0 mt-1" size={24} />
+                <div>
+                  <h5 className="font-bold text-slate-200 mb-2 font-space text-lg">II. Engenharia de Refações</h5>
+                  <p className="text-sm text-slate-400 font-space leading-relaxed">Projetos de marca e design exigem assertividade conceitual. Oferecemos 3 rodadas de ajustes rigorosas inclusas no valor. Modificações excedentes geram taxas à parte.</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4 items-start">
+                <CheckCircle2 className="text-green-400 shrink-0 mt-1" size={24} />
+                <div>
+                  <h5 className="font-bold text-slate-200 mb-2 font-space text-lg">III. Gargalos Terceiros</h5>
+                  <p className="text-sm text-slate-400 font-space leading-relaxed">Se precisarmos de uma aprovação sua ou de um acesso técnico e houver demora na resposta, o cronograma é sumariamente pausado para não furar a fila da produtora.</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4 items-start">
+                <CheckCircle2 className="text-green-400 shrink-0 mt-1" size={24} />
+                <div>
+                  <h5 className="font-bold text-slate-200 mb-2 font-space text-lg">IV. Fechamento Financeiro</h5>
+                  <p className="text-sm text-slate-400 font-space leading-relaxed">Modelo de segurança mútua: 50% de entrada para firmar o compromisso e 50% na aprovação técnica final, obrigatoriamente antes da entrega dos arquivos fonte.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    );
+  };
+
   const renderContent = () => {
     switch (activeTab) {
       case 'home': return <Presentation />;
       case 'experience': return <Experience />;
       case 'blog': return <Blog />;
       case 'contact': return <Contact />;
+      case 'kingmagic': return <KingMagic />;
       default: return <Presentation />;
     }
   };
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-blue-500/30 selection:text-blue-200 overflow-hidden">
-      <ScrollbarStyles />
+      <GlobalStyles />
 
       {/* Mobile Header - Improved Glassmorphism and Spacing */}
       <div className="md:hidden flex items-center justify-between px-4 py-3 border-b border-slate-800 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
@@ -976,6 +1335,13 @@ export default function App() {
                 onClick={() => { setActiveTab('contact'); setIsMobileMenuOpen(false); }}
                 icon={Mail}
                 label={t.nav.contact}
+              />
+              {/* Novo Link KINGMagic */}
+              <NavLink
+                active={activeTab === 'kingmagic'}
+                onClick={() => { setActiveTab('kingmagic'); setIsMobileMenuOpen(false); }}
+                icon={Wand2}
+                label={t.nav.kingmagic}
               />
             </nav>
 
