@@ -2,17 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
    <url>
-      <loc>https://lfrb.com.br/</loc>
-      <lastmod>2026-01-05</lastmod>
+      <loc>https://www.lfrb.com.br/</loc>
+      <lastmod>2026-09-06</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
-      
       <image:image>
-        <image:loc>https://lfrb.com.br/public/bg.png</image:loc>
-        <image:title>Personal Portfolio - Luis Fernando Refatti Boff</image:title>
-      </image:image>
-      <image:image>
-        <image:loc>https://lfrb.com.br/public/profileimage.png</image:loc>
+        <image:loc>https://www.lfrb.com.br/profileimage.jpg</image:loc>
         <image:title>Luis Fernando Refatti Boff</image:title>
       </image:image>
    </url>

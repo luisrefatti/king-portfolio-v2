@@ -1,3 +1,40 @@
+# Buscadores tradicionais
 User-agent: *
 Allow: /
-Sitemap: https://lfrb.com.br/sitemap.xml
+
+# Crawlers de IA / assistentes (liberados de propósito, para aparecer bem
+# em buscas e respostas geradas por IA)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://www.lfrb.com.br/sitemap.xml

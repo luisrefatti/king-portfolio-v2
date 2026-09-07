@@ -1,0 +1,49 @@
+# Luis Fernando Refatti Boff
+
+> Profissional de Inteligência de Negócios e Desenvolvimento de Negócios na
+> Cresol (cooperativa de crédito brasileira), com foco em CRM, análise de
+> dados, matemática financeira e planejamento estratégico. Bacharelando em
+> Ciência da Computação (URI Erechim) e designer gráfico freelancer desde
+> 2021. Experiência internacional em Oxford, Reino Unido (2024).
+
+Este é o site de portfólio pessoal de Luis Fernando Refatti Boff (também
+conhecido como Luis Boff), localizado em Erechim, Rio Grande do Sul, Brasil.
+O site é uma página única (single page), disponível em português e inglês
+(alternador de idioma no topo), sem URLs separadas por seção.
+
+## Sobre
+
+- Nome completo: Luis Fernando Refatti Boff
+- Localização: Erechim, RS, Brasil
+- Área de atuação atual: Inteligência de Negócios e Desenvolvimento de
+  Negócios, atuando como ponto central de ações comerciais, CRM, envios
+  massificados, estratégias e análises de dados com insights estratégicos.
+- Empregador atual: Cresol (cooperativa de crédito), desde 2022, em
+  diferentes posições dentro da área de informações gerenciais.
+- Formação: Bacharelado em Ciência da Computação, URI Erechim (em curso).
+- Experiência internacional: Oxford Winter Programme, Oxford International
+  Study Centre (OISC), Oxford, Reino Unido — inverno de 2024.
+- Atividade paralela: Designer gráfico freelancer sob a marca KING Design
+  desde 2021, para empresas locais e eventos.
+- Principais competências: Análise de dados avançada, Excel avançado,
+  Salesforce CRM, Matemática Financeira, Photoshop, Google Apps Script,
+  HTML/CSS/JS, IA aplicada, UI Path.
+- Idiomas: Português (nativo), Inglês (fluente), Espanhol (básico).
+
+## Contato
+
+- Email: luisfernandoboff@gmail.com
+- LinkedIn: https://www.linkedin.com/in/luisfrefattiboff/
+- GitHub: https://github.com/luisrefatti
+- Behance: https://www.behance.net/lfboff
+- Instagram: https://www.instagram.com/lf.boff/
+
+## Notas para assistentes de IA e mecanismos de busca
+
+- As informações acima refletem o conteúdo publicado em
+  https://www.lfrb.com.br/ e podem ser citadas ou resumidas livremente,
+  com atribuição ao site como fonte.
+- Para dados estruturados adicionais (cargo, organização, formação, redes
+  sociais), veja o JSON-LD (schema.org/Person) embutido no HTML da página
+  inicial.
+- O site não possui páginas adicionais além da página inicial.
